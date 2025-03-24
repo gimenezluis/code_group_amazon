@@ -1,0 +1,27 @@
+# Diretórios padrão do Maven
+/target/
+
+# Logs e relatórios
+*.log
+*.tmp
+*.pid
+*.dump
+cucumber-report.html
+cucumber-report.json
+
+# Configurações locais de IDEs
+*.iml
+.idea/
+*.class
+*.classpath
+*.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+screenshots/
