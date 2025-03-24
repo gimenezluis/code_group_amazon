@@ -112,7 +112,7 @@ public class AmazonActions {
     }
 
     public void validarMenuEstaVisivel() {
-        WebElement menu = WaitUtil.waitForVisibility(AmazonPage.MENU_HAMBURGUER);
+        WebElement menu = WaitUtil.waitForVisibility(AmazonPage.MENU_HAMBURGER);
         assertTrue("Menu de navegação não está visível!", menu.isDisplayed());
     }
 
