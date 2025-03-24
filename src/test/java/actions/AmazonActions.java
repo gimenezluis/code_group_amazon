@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -113,6 +114,14 @@ public class AmazonActions {
     public void validarMenuEstaVisivel() {
         WebElement menu = WaitUtil.waitForVisibility(AmazonPage.MENU_HAMBURGUER);
         assertTrue("Menu de navegação não está visível!", menu.isDisplayed());
+    }
+
+    public void validarTempoDeCarregamentoInferiorA(int limiteMilissegundos) {
+        Double duracao = (Double) ((JavascriptExecutor) driver)
+                .executeScript("return performance.getEntriesByType('navigation')[0].duration;");
+
+        System.out.println("Tempo de carregamento: " + duracao.longValue() + " ms");
+        assertTrue("Tempo excedeu o limite: " + duracao.longValue() + " ms", duracao < limiteMilissegundos);
     }
 
 }

@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
         "pretty",
         "html:target/cucumber-report.html"
     },
+    tags = "@Performance",
     monochrome = true
 )
 public class RunnerTest {

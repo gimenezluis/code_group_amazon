@@ -25,3 +25,9 @@ Feature: Autocomplete e menu de navegação
       | tablet    |
       | mobile    |
 
+  @Performance
+  Scenario: Página inicial carrega em menos de 4 segundos
+    Given Abro a pagina inicial da Amazon
+    Then O tempo de carregamento deve ser inferior a 4000 milissegundos
+
+

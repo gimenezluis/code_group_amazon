@@ -12,19 +12,18 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        DriverUtil.getDriver(); // Inicializa o driver
+        DriverUtil.getDriver();
     }
 
     @After
     public void afterScenario(Scenario scenario) {
         WebDriver driver = DriverUtil.getDriver();
 
-        // Tira print e anexa sempre
         if (driver instanceof TakesScreenshot) {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "Screenshot");
         }
 
-        DriverUtil.killDrivers(); // Finaliza a sessão
+        DriverUtil.killDrivers();
     }
 }
